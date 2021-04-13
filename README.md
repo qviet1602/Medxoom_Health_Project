@@ -1,6 +1,6 @@
 # Hospital and Medical Providers Recommendation
 ## 1. Introduction
-
+The objective for this project is to train a set of machine learning models to predict the “relative price for Inpatient and Outpatient service” by nationwide healthcare providers. This prediction could be either a direct relative price for Inpatient and Outpatient service or a category labeling to which category the hospital belongs to. Category can be of 3 classes including low, medium and high resembling cost/price. The prediction in terms of relative price might not be accurate enough but the classes are expected to be in the reasonable categories.
 ## 2. Dataset Overview
 1)	Detailed_Data.xlsx : This is the file containing the “labels” for a subset of hospitals from all over the US. The labels could be the standardized price , total allowed amount or relative price(inpatient / outpatient or both). The study that details how exactly the variables in this file are calculated is found [here](https://www.rand.org/health-care/projects/price-transparency/hospital-pricing/round2.html)
 2)	Rand_hcris_cy_hosp_a_2020_05_01.csv.zip : This is the zipped full hospital cost report information system (HCRIS) data file having all the financial metrics for all hospitals across several years .The detailed description of each variable in this file is provided in the files in the folder above.
