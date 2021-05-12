@@ -10,12 +10,15 @@ The objective for this project is to train a set of machine learning models to p
 
 ## 3. Feature Engineering
 After merging the OPPS, IPPS, Detailed_Data and rand_hcris dataset, we have 87 features and 3329 data points in our final merged data set. We trained classification and regression models with the best subset of 87 features as our benchmark models. In order to improve our model’s performance, we processed feature engineering.
+
 1) Categorical features
 
 Firstly, we have investigated categorical features. And we dropped categorical features that had too many unique values and low predication power such as ‘hospital name’, ‘street address’. The reason behind this is if we transformed such categorical to dummy variables, it would add thousands of additional dummy features to the data which would increase the model complexity and cause an overfitting problem and lead to high variance. We had also transformed some categorical variables’ format to ‘yes/no’ which included if the hospital system is independent - if independent ipps? Or if independent cah? Also, if the hospital is a critical access system.
+
 2) Missing data
 
 Secondly, we have investigated missing data. Our approach for missing data was imputation, but if we performed imputation on too many data points, it would introduce more errors in our model and thus reduce the predictability. Therefore, we looped through features that had missing data, and dropped features that had more than 65% Nan. This brought down the data to 52 features in total. We then experimented with different imputers like simple imputer to impute with mean/median values or fill in with a special value indicating missing field and then a knn imputer which imputed the missing values based on the 8 nearest neighbors that had value filled in.
+
 3) Data Transformation
 Before imputing the missing values on each column, we have tried transforming each numerical column in different ways that included Standard Transformation to have all the columns fixed in a particular range, having Box-Cox Transformation (pre transforming all into positive values) and lastly the quartile transformation which had the best results of all. Quantile transformation transforms each column to be in quantiles representing closer to normal distribution as the label to be predicted or the response variable was already following a normal distribution.
 
