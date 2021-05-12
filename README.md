@@ -20,9 +20,11 @@ Firstly, we have investigated categorical features. And we dropped categorical f
 Secondly, we have investigated missing data. Our approach for missing data was imputation, but if we performed imputation on too many data points, it would introduce more errors in our model and thus reduce the predictability. Therefore, we looped through features that had missing data, and dropped features that had more than 65% Nan. This brought down the data to 52 features in total. We then experimented with different imputers like simple imputer to impute with mean/median values or fill in with a special value indicating missing field and then a knn imputer which imputed the missing values based on the 8 nearest neighbors that had value filled in.
 
 3) Data Transformation
+
 Before imputing the missing values on each column, we have tried transforming each numerical column in different ways that included Standard Transformation to have all the columns fixed in a particular range, having Box-Cox Transformation (pre transforming all into positive values) and lastly the quartile transformation which had the best results of all. Quantile transformation transforms each column to be in quantiles representing closer to normal distribution as the label to be predicted or the response variable was already following a normal distribution.
 
 4) Correlation matrix
+
 Thirdly, we investigated the correlation between all predicting variables and response variables using different correlation methods like Pearson and Spearman correlation. And we found Pearson correlation was the appropriate method to determine the predictiveness on the predicting variables when compared with the relative price. We tried including only the features that had at least 0.01 correlation with the response variable. Also, among the features that had high correlation with response variable - we have tested for correlation among the predicting variables themselves and removed features that had high correlation with each other (Ex: Total discharge, total discharge.1, total discharge.2 - these 3 had high correlation with each other and Total discharge.1 had highest correlation with the response variable - so we have included only Total discharges.1 excluding Total discharges and Total discharges.2). These reduced features count to 35.
 
 ## 4. Models
